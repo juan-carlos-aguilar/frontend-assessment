@@ -1,9 +1,17 @@
 /* Displays country data on 'index.html' */
-function showCountry(country)
+function showCountry(name, capital, region, lang, popu, flag)
 {
     var countriesList = document.getElementById("country-list");
-    countriesList.innerHTML += "<li>" + country + "</li>";
+    countriesList.innerHTML += "<tr>"
+                            + "<td>" + name + "</td>"
+                            + "<td>" + capital + "</td>"
+                            + "<td>" + region + "</td>"
+                            + "<td>" + lang + "</td>"
+                            + "<td>" + popu + "</td>"
+                            + "<td>" + "<img src='" + flag + "' class='table-img' /></td>"
+                            + "</tr>";
 }
+
 
 /* Ajax request to load countries into 'index.html' Table */
 function getCountries()
@@ -33,7 +41,12 @@ function getCountries()
                 // Update the page and display data
                 for(var i in countriesList)
                 {
-                    showCountry(countriesList[i]["name"]["common"]);
+                    showCountry(countriesList[i]["name"]["official"],
+                                countriesList[i]["capital"],
+                                countriesList[i]["region"],
+                                countriesList[i]["languages"],
+                                countriesList[i]["population"],
+                                countriesList[i]["flags"]["png"]);
                 }
             }
         }

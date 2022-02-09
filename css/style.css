@@ -1,3 +1,23 @@
 .title {
     text-align: center;
 }
+
+table {
+    margin: 20px auto;
+}
+
+th {
+    text-align: center !important;
+    margin: 0px 5px !important;
+    border: 1px solid black !important;
+    border-top: none !important;
+    
+}
+
+td {
+    border-bottom: 0.5px solid black !important;
+}
+
+.table-img {
+    width: 100px;
+}
