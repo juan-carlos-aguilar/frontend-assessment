@@ -1,4 +1,4 @@
-/* Displays contries on 'index.html' */
+/* Displays country data on 'index.html' */
 function showCountry(country)
 {
     var countriesList = document.getElementById("country-list");
@@ -21,7 +21,7 @@ function getCountries()
         // When request is done, update page
         if(this.readyState == 4)
         {
-            console.log("Callback done..." + this.responseText);
+            console.log("Callback done... " + this.responseText);
             console.log("Status: " + this.status);
 
             // if request successful update page
@@ -33,7 +33,7 @@ function getCountries()
                 // Update the page and display data
                 for(var i in countriesList)
                 {
-                    showCountry(countriesList[i]["name.common"]);
+                    showCountry(countriesList[i]["name"]["common"]);
                 }
             }
         }
