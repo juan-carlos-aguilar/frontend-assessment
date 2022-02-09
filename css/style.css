@@ -1,21 +1,63 @@
+body {
+    background-color: rgb(41, 39, 39) !important;
+}
+h1, p, th, td 
+{
+    color: white;
+}
 .title {
+    margin: 10px 0px;
     text-align: center;
 }
 
+.filters {
+    width: 75%;
+    margin: 10px auto;
+}
+
+.filters label {
+    color: white;
+    margin: 0px 15px;
+}
+
+.select-field {
+    width: 150px !important;
+    position: absolute;
+    left: 12.5%;
+}
+
+.search-field {
+    width: 150px !important;
+    position: absolute;
+    right: 12.5%;
+}
+    
 table {
     margin: 20px auto;
 }
 
 th {
-    text-align: center !important;
     margin: 0px 5px !important;
-    border: 1px solid black !important;
-    border-top: none !important;
-    
+    border-bottom: 1px solid rgba(206, 196, 196, 0.795) !important;
+}
+
+tr:nth-child(even) 
+{
+    background-color: #9c7f7f
+}
+
+tr:hover:not(:first-child) {
+    border: 2px solid rgba(124, 91, 214, 0.815);
 }
 
 td {
-    border-bottom: 0.5px solid black !important;
+    border-bottom: 0.5px solid rgba(97, 94, 94, 0.795) !important;
+}
+
+.close {
+    float: right !important;
+    background-color: transparent;
+    border: none;
 }
 
 .table-img {
