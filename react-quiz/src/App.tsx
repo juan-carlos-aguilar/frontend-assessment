@@ -54,21 +54,23 @@ const App = () => {
   return ( 
     <div className="App">
       <h1>React Quiz</h1>
-      { gameOver || userAnswers.length == TOTAL_QUESTIONS ? (
+      { gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
         <button className="start" onClick={startTrivia}>
           Start
         </button>
       ) : null }
-      <p className="score">Score:</p>
-      <p>Loading Question...</p>
-      {/* <QuestionCard 
+      {!gameOver ? <p className="score">Score:</p> : null }
+      {loading && <p>Loading Questions...</p>}
+      {!loading && !gameOver && (
+      <QuestionCard 
         questionNr = {number + 1}
         totalQuestions = {TOTAL_QUESTIONS}
         question = {questions[number].question}
         answers = {questions[number].answers}
         userAnswer = {userAnswers ? userAnswers[number] : undefined}
         callback = {checkAnswer}
-      /> */}
+      />
+      )}
       <button className="next" onClick={nextQuestion}>
         Next Question
       </button>
