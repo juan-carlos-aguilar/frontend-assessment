@@ -42,6 +42,20 @@ body{
     background: #aaa;
 }
 
+#jumbo {
+    background-image: url('../images/1610842101789.jpg');
+    background-position: center center;
+    min-height: 200px;
+    text-align: center;
+}
+
+#jumbo h1 {
+    color: white;
+    font-size: 45px;
+    padding-top: 20px;
+    line-height: 1.6em;
+}
+
 p {
     border-top: 5px solid blue;
     border-right: 2px dotted green;
