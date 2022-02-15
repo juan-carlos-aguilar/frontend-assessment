@@ -70,6 +70,14 @@ body{
     border-right: 1px solid #333;
     box-sizing: border-box;
 }
+
+#mainFooter {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
 /* p {
     border-top: 5px solid blue;
     border-right: 2px dotted green;
