@@ -23,6 +23,9 @@ body{
 #mainNav {
     background: #ccc;
     color: black;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 #mainNav ul {
@@ -90,6 +93,26 @@ body{
     position: relative;
 }
 
+#pExample span:first-child {
+    position: absolute;
+    bottom: 20px;
+    right: 100px;
+}
+
+#pExample span:last-child {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+
+}
+
+#fixed {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    background: #ff652f;
+    padding: 5px;
+}
 @media (max-width: 600px) {
     #main, #sidebar {
         width: 100%;
