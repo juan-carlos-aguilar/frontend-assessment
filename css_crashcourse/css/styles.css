@@ -11,6 +11,10 @@ body{
     overflow: hidden;
 }
 
+.clearFix {
+    clear: both;
+}
+
 #mainHeader {
     background: #333;
     color: white;
