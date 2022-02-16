@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Todo } from "../model";
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
 import { MdDone } from 'react-icons/md'
@@ -41,10 +41,20 @@ const SingleTodo = ({todo, todos, setTodos }: Props) => {
         setEdit(false)
     };
 
+    // Focus input automatically when clicking 'edit' button
+    useEffect(() => {
+        inputRef.current?.focus();
+    }, [edit])
+
+    const inputRef = useRef<HTMLInputElement>(null);
   return (
     <form action="" className="todos_single" onSubmit={(e) => handleEdit(e, todo.id)}>
         {edit ? (
-            <input value={editTodo} onChange={(e) =>setEditTodo(e.target.value)} className="todos_single_text" />
+            <input
+                ref={inputRef}
+                value={editTodo} 
+                onChange={(e) => setEditTodo(e.target.value)} 
+                className="todos_single_text" />
             ) : todo.isDone ? (
                 <s className="todos_single_text">{todo.todo}</s>        
             ) : (
