@@ -31,7 +31,7 @@ body {
 
 .main {
     @include flexCenter(row);
-    width: 80%;
+    width: calc(80% - 40%);
     margin: 0 auto;
     
     // '&' = parent of element
