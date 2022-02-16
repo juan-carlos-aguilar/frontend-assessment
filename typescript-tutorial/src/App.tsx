@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { DragDropContext } from 'react-beautiful-dnd';
 import { isDefaultClause } from 'typescript';
 import './App.css';
 // Import Components
@@ -12,6 +13,7 @@ const App: React.FC = () => {
   // States that give functionality
   const [todo, setTodo] = useState<string>("")
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [completedTodos, setCompletedTodos] = useState<Todo[]>([])
 
   const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,11 +31,18 @@ const App: React.FC = () => {
   console.log(todos);
 
   return (
-    <div className="App">
-      <span className="heading">Taskify</span>
-      <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <TodoList todos={todos} setTodos={setTodos} />
-    </div>
+    <DragDropContext onDragEnd={() => {}}>
+      <div className="App">
+        <span className="heading">Taskify</span>
+        <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+        <TodoList todos={todos} 
+                setTodos={setTodos} 
+                completedTodos={completedTodos} 
+                setCompletedTodos={setCompletedTodos} 
+        />
+      </div>
+    </DragDropContext>
+
   );
 }
 
