@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DragDropContext } from 'react-beautiful-dnd';
+import { DragDropContext, DropResult } from 'react-beautiful-dnd';
 import { isDefaultClause } from 'typescript';
 import './App.css';
 // Import Components
@@ -28,10 +28,41 @@ const App: React.FC = () => {
     }
   };
 
-  console.log(todos);
+  const onDragEnd = (result: DropResult) => {
+    const { source, destination } = result;
+      
+      if (!destination) return;
+
+      if (destination.droppableId === source.droppableId && 
+        destination.index === source.index
+      )
+
+        return;
+      
+      let add,
+        active = todos,
+        complete = completedTodos;
+
+      if(source.droppableId === 'TodosList') {
+        add = active[source.index];
+        active.splice(source.index, 1);
+      } else {
+        add = complete[source.index];
+        complete.splice(source.index, 1);
+      }
+
+      if(destination.droppableId === 'TodosList') {
+        active.splice(source.index, 0, add);
+      } else {
+        complete.splice(source.index, 0, add);
+      }
+
+      setCompletedTodos(complete);
+      setTodos(active);
+  };
 
   return (
-    <DragDropContext onDragEnd={() => {}}>
+    <DragDropContext onDragEnd={onDragEnd}>
       <div className="App">
         <span className="heading">Taskify</span>
         <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
