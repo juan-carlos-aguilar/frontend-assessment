@@ -1,24 +1,62 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Sass Tutorial</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.css'>
-    <script src='main.js'></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Mike Smith Portfolio</title>
 </head>
+<body>
+    <header>
+        <div class="menu-btn"></div>
+            <span class="menu-btn_burger"></span>
+    </header>
 
-<body class="light">
-    <div class="main">
-        <p class="main_paragraph1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque a, vitae possimus totam quasi quaerat
-            corrupti. Suscipit at obcaecati dicta, aperiam praesentium eum blanditiis asperiores neque omnis repudiandae
-            aliquam magnam!</p>
-        <p class="main_paragraph2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque a, vitae possimus totam quasi quaerat
-            corrupti. Suscipit at obcaecati dicta, aperiam praesentium eum blanditiis asperiores neque omnis repudiandae
-            aliquam magnam!</p>
-    </div>
+    <nav class="nav">
+        <ul class="menu-nav">
+            <li class="menu-nav_item">
+                <a href="index.html" class="menu-nav_link">Home</a>
+            </li>
+            <li class="menu-nav_item">
+                <a href="about.html" class="menu-nav_link">About</a>
+            </li>
+            <li class="menu-nav_item">
+                <a href="projects.html" class="menu-nav_link">My Projects</a>
+            </li>
+            <li class="menu-nav_item">
+                <a href="contact.html" class="menu-nav_link">Contact Me</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="home">
+            <h2>Hi! My Name Is</h2>
+            <h1 class="home_name">
+                Mike <span class="home_name-last">Smith</span>
+            </h1>
+            <h2>
+                Web Developer, Designer & Programmer
+            </h2>
+
+            <div class="social-icons">
+                <a href="#">
+                    <i class="fab fab-twitter fa-2x"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fab-facebook fa-2x"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fab-instagram fa-2x"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fab-github fa-2x"></i>
+                </a>
+            </div>
+
+            <footer>&copy; Copyright 2022</footer>
+        </section>
+    </main>
 </body>
-
 </html>
