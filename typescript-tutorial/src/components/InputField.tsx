@@ -1,7 +1,11 @@
 import React from 'react';
 import './styles.css';
 
-export default function InputField() {
+interface Props {
+    todo: string;
+    setTodo: React.Dispatch<React.SetStateAction<string>>;
+}
+const InputField: React.FC<Props> = ({ todo, setTodo }) => {
   return (
     <form action="" className="input">
         <input type="input" placeholder="Enter a Task" className="input_box" />
@@ -11,3 +15,5 @@ export default function InputField() {
     </form>
   )
 }
+
+export default InputField;
