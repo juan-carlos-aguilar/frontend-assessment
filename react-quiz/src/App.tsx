@@ -32,6 +32,7 @@ const App = () => {
     setLoading(true);
     setGameOver(false);
 
+    // ***** Figure out how to add a 'choose type' functionality *****
     const newQuestions = await fetchQuizQuestions(
       TOTAL_QUESTIONS,
       Difficulty.EASY
@@ -80,11 +81,16 @@ const App = () => {
       <GlobalStyle />
       <Wrapper>
         <h1>React Quiz</h1>
-        { gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+        { gameOver ? (
           <button className="start" onClick={startTrivia}>
             Start
           </button>
-        ) : null }
+        ) : !gameOver && userAnswers.length === TOTAL_QUESTIONS ? (
+          <button className="start" onClick={startTrivia}>
+            Restart Quiz
+          </button>
+        )
+        : null }
         {!gameOver ? <p className="score">Score: {score}</p> : null }
         {loading && <p>Loading Questions...</p>}
         {!loading && !gameOver && (
