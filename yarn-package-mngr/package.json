@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "go": "node index.js",
+    "removeModules": "rm node_modules/",
+    "installModules": "yarn install"
+  },
   "dependencies": {
     "bootstrap": "^5.1.3",
     "moment": "^2.29.1"
